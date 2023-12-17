@@ -1,5 +1,9 @@
 package com.ender09.block_coding;
 
+import com.ender09.block_coding.foundation.registry.ModBlockEntityTypes;
+import com.ender09.block_coding.foundation.registry.ModBlocks;
+import com.ender09.block_coding.foundation.registry.ModCreativeTabs;
+import com.ender09.block_coding.foundation.registry.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -23,6 +27,12 @@ public class BlockCoding
     public BlockCoding()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
+        ModBlockEntityTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

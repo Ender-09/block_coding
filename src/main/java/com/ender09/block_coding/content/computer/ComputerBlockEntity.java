@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ComputerBlockEntity extends BlockEntity {
-    public NodeGraph nodeGraph;
+    public NodeGraph nodeGraph = new NodeGraph();
     public Network network;
 
     public ComputerBlockEntity(BlockPos pPos, BlockState pBlockState) {

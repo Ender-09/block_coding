@@ -1,12 +1,10 @@
 package com.ender09.block_coding.foundation.visual_scripting.node_parameters;
 
-import java.lang.reflect.Type;
-
 public class InfoInputParameter<T> extends NodeParameter {
     T value;
     InfoOutputParameter<T> outputParameter;
 
-    public InfoInputParameter(String label, Type valueType) {
+    public InfoInputParameter(String label) {
         super(label);
     }
 

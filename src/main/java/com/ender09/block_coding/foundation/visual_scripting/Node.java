@@ -9,13 +9,11 @@ public class Node {
     String name;
     String description;
     NodeFunction[] functions;
-    NodeParameter[] inputs;
 
-    protected Node(String name, String description, NodeFunction[] functions, NodeParameter[] inputs) {
+    protected Node(String name, String description, NodeFunction[] functions) {
         this.name = name;
         this.description = description;
         this.functions = functions;
-        this.inputs = inputs;
     }
 
     public static Node.Builder builder(String name, String description) {
@@ -25,7 +23,6 @@ public class Node {
         String name;
         String description;
         List<NodeFunction> functions = new ArrayList<>();
-        List<NodeParameter> inputs = new ArrayList<>();
 
         public Builder(String name, String description) {
             this.name = name;
@@ -36,13 +33,9 @@ public class Node {
             functions.add(function);
             return this;
         }
-        public Node.Builder addInputParameter(NodeParameter inputParameter) {
-            inputs.add(inputParameter);
-            return this;
-        }
 
         public Node build() {
-            return new Node(name, description, functions.toArray(NodeFunction[]::new), inputs.toArray(NodeParameter[]::new));
+            return new Node(name, description, functions.toArray(NodeFunction[]::new));
         }
     }
 }

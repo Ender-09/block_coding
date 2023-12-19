@@ -9,5 +9,13 @@ public class Network {
 
     public double networkId;
     public List<BlockPos> devices;
-    public List<BlockPos> handlers;
+    //public List<BlockPos> handlers;
+
+
+    public Network() {
+        NETWORKS.add(this);
+    }
+    public void delete() {
+        NETWORKS.remove(this);
+    }
 }

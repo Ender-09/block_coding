@@ -1,16 +1,28 @@
 package com.ender09.block_coding.foundation.visual_scripting.node_parameters;
 
+import java.util.List;
+
 public class EventFlowOutputParameter extends NodeParameter {
-    EventFlowOutputParameter childParameter;
+    public static final String DEFAULT_LABEL = "Event Order";
+    List<EventFlowInputParameter> childParameters;
 
     public EventFlowOutputParameter(String label) {
         super(label);
     }
-
-    public void setChildParameter(EventFlowOutputParameter childParameter) {
-        this.childParameter = childParameter;
+    public EventFlowOutputParameter() {
+        super(DEFAULT_LABEL);
     }
+
+    public void addChildParameter(EventFlowInputParameter childParameter) {
+        childParameters.add(childParameter);
+    }
+    public void removeChildParameter(EventFlowInputParameter childParameter) {
+        childParameters.remove(childParameter);
+    }
+
     public void trigger() {
-        childParameter.trigger();
+        for(EventFlowInputParameter childParameter: childParameters) {
+            childParameter.trigger();
+        }
     }
 }

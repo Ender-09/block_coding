@@ -59,4 +59,9 @@ public class ComputerScreen extends Screen {
         pGuiGraphics.blit(BACKGROUND_TEXTURE, 0, 0, 0, 0.0F, 0.0F, this.width, this.height, 8, 8);
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
     }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
+    }
 }

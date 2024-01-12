@@ -20,7 +20,7 @@ public class CompareFunction<T> extends NodeFunction {
     }
 
     @Override
-    public void trigger() {
+    public void onTrigger() {
         InfoInputParameter<T> valueA = (InfoInputParameter<T>) inputs[1];
         InfoInputParameter<T> valueB = (InfoInputParameter<T>) inputs[2];
 

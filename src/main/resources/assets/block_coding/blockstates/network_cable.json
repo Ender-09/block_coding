@@ -1,0 +1,527 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side"
+      },
+      "when": {
+        "north": "side|up",
+        "facing":  "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "y": 90
+      },
+      "when": {
+        "east": "side|up",
+        "facing":  "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "y": 180
+      },
+      "when": {
+        "south": "side|up",
+        "facing":  "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "y": 270
+      },
+      "when": {
+        "west": "side|up",
+        "facing":  "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up"
+      },
+      "when": {
+        "north": "up",
+        "facing":  "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "y": 90
+      },
+      "when": {
+        "east": "up",
+        "facing":  "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "y": 180
+      },
+      "when": {
+        "south": "up",
+        "facing":  "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "y": 270
+      },
+      "when": {
+        "west": "up",
+        "facing":  "up"
+      }
+    },
+
+
+
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 180,
+        "y": 180
+      },
+      "when": {
+        "north": "side|up",
+        "facing":  "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 180,
+        "y": 270
+      },
+      "when": {
+        "east": "side|up",
+        "facing":  "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 180
+      },
+      "when": {
+        "south": "side|up",
+        "facing":  "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 180,
+        "y": 90
+      },
+      "when": {
+        "west": "side|up",
+        "facing":  "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "x": 180,
+        "y": 180
+      },
+      "when": {
+        "north": "up",
+        "facing":  "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "x": 180,
+        "y": 270
+      },
+      "when": {
+        "east": "up",
+        "facing":  "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "x": 180
+      },
+      "when": {
+        "south": "up",
+        "facing":  "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "x": 180,
+        "y": 90
+      },
+      "when": {
+        "west": "up",
+        "facing":  "down"
+      }
+    },
+
+
+
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side_alternate",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "north": "side|up",
+        "facing":  "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "down": "side|up",
+        "facing":  "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side_alternate",
+        "x": 270,
+        "y": 270
+      },
+      "when": {
+        "south": "side|up",
+        "facing":  "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 270,
+        "y": 270
+      },
+      "when": {
+        "up": "side|up",
+        "facing":  "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "north": "up",
+        "facing":  "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "down": "up",
+        "facing":  "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 270,
+        "y": 270
+      },
+      "when": {
+        "south": "up",
+        "facing":  "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 270,
+        "y": 270
+      },
+      "when": {
+        "up": "up",
+        "facing":  "east"
+      }
+    },
+
+
+
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side_alternate",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "north": "side|up",
+        "facing":  "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "down": "side|up",
+        "facing":  "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side_alternate",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "south": "side|up",
+        "facing":  "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "up": "side|up",
+        "facing":  "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "north": "up",
+        "facing":  "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "down": "up",
+        "facing":  "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "south": "up",
+        "facing":  "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 270,
+        "y": 90
+      },
+      "when": {
+        "up": "up",
+        "facing":  "west"
+      }
+    },
+
+
+
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 90
+      },
+      "when": {
+        "down": "side|up",
+        "facing":  "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 270,
+        "y": 180
+      },
+      "when": {
+        "up": "side|up",
+        "facing":  "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side_alternate",
+        "x": 90
+      },
+      "when": {
+        "west": "side|up",
+        "facing":  "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side_alternate",
+        "x": 270,
+        "y": 180
+      },
+      "when": {
+        "east": "side|up",
+        "facing":  "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "x": 90
+      },
+      "when": {
+        "down": "up",
+        "facing":  "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "x": 270,
+        "y": 180
+      },
+      "when": {
+        "up": "up",
+        "facing":  "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 90
+      },
+      "when": {
+        "west": "up",
+        "facing":  "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 270,
+        "y": 180
+      },
+      "when": {
+        "east": "up",
+        "facing":  "north"
+      }
+    },
+
+
+
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 90,
+        "y": 180
+      },
+      "when": {
+        "down": "side|up",
+        "facing":  "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side",
+        "x": 270
+      },
+      "when": {
+        "up": "side|up",
+        "facing":  "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side_alternate",
+        "x": 270
+      },
+      "when": {
+        "west": "side|up",
+        "facing":  "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_side_alternate",
+        "x": 90,
+        "y": 180
+      },
+      "when": {
+        "east": "side|up",
+        "facing":  "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "x": 90,
+        "y": 180
+      },
+      "when": {
+        "down": "up",
+        "facing":  "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up",
+        "x": 270
+      },
+      "when": {
+        "up": "up",
+        "facing":  "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 270
+      },
+      "when": {
+        "west": "up",
+        "facing":  "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "block_coding:block/network_cable/network_cable_up_alternate",
+        "x": 90,
+        "y": 180
+      },
+      "when": {
+        "east": "up",
+        "facing":  "south"
+      }
+    }
+  ]
+}

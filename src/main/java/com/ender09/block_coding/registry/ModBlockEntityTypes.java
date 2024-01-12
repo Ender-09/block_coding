@@ -1,7 +1,6 @@
-package com.ender09.block_coding.foundation.registry;
+package com.ender09.block_coding.registry;
 
 import com.ender09.block_coding.BlockCoding;
-import com.ender09.block_coding.compat.vanilla.sculk_sensor.SculkSensorBlockEntityOverride;
 import com.ender09.block_coding.content.computer.ComputerBlockEntity;
 import com.ender09.block_coding.content.network_transceiver.NetworkTransceiverBlockEntity;
 import net.minecraft.world.level.block.Blocks;
@@ -20,11 +19,6 @@ public class ModBlockEntityTypes {
             () -> BlockEntityType.Builder.of(ComputerBlockEntity::new, ModBlocks.COMPUTER.get()).build(null));
     public static final RegistryObject<BlockEntityType<NetworkTransceiverBlockEntity>> NETWORK_TRANSCEIVER = BE_TYPES.register("network_transceiver",
             () -> BlockEntityType.Builder.of(NetworkTransceiverBlockEntity::new, ModBlocks.NETWORK_TRANSCEIVER.get()).build(null));
-
-
-    //List of overriding Block Entities:
-    public static final RegistryObject<BlockEntityType<SculkSensorBlockEntityOverride>> SCULK_SENSOR_OVERRIDE = BE_TYPES.register("sculk_sensor",
-            () -> BlockEntityType.Builder.of(SculkSensorBlockEntityOverride::new, Blocks.SCULK_SENSOR).build(null));
 
     public static void register(IEventBus eventBus) {
         BE_TYPES.register(eventBus);

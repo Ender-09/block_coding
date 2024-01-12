@@ -1,4 +1,4 @@
-package com.ender09.block_coding.foundation.client;
+package com.ender09.block_coding.util.client;
 
 import com.ender09.block_coding.content.computer.ComputerScreen;
 import net.minecraft.client.Minecraft;

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.ender09.block_coding.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "CalibratedSculkSensorBlockMixin",
+    "SculkSensorBlockEntityMixins",
+    "CalibratedSculkSensorBlockMixin",
+    "VibrationUserMixins"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "mixins.block_coding.refmap.json"
+}

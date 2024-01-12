@@ -1,7 +1,7 @@
 package com.ender09.block_coding.content.visual_scripting.nodes;
 
 import com.ender09.block_coding.content.visual_scripting.nodes.node_functions.AdditionFunction;
-import com.ender09.block_coding.foundation.visual_scripting.Node;
+import com.ender09.block_coding.foundation.visual_scripting.nodes.Node;
 
 public class MathsNodes {
     public static final String ADDITION_NODE_NAME = "Addition";

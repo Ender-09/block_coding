@@ -1,10 +1,11 @@
 package com.ender09.block_coding.foundation.visual_scripting.node_parameters;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EventFlowOutputParameter extends NodeParameter {
-    public static final String DEFAULT_LABEL = "Event Order";
-    List<EventFlowInputParameter> childParameters;
+    public static final String DEFAULT_LABEL = "Node Event Order";
+    List<EventFlowInputParameter> childParameters = new ArrayList<>();
 
     public EventFlowOutputParameter(String label) {
         super(label);

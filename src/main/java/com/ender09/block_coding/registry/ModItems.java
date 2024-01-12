@@ -1,4 +1,4 @@
-package com.ender09.block_coding.foundation.registry;
+package com.ender09.block_coding.registry;
 
 import com.ender09.block_coding.BlockCoding;
 import net.minecraft.world.item.Item;

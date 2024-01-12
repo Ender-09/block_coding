@@ -1,6 +1,6 @@
-package com.ender09.block_coding.foundation.visual_scripting;
+package com.ender09.block_coding.foundation.visual_scripting.nodes;
 
-import com.ender09.block_coding.foundation.visual_scripting.node_parameters.NodeParameter;
+import com.ender09.block_coding.foundation.visual_scripting.NodeFunction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +14,37 @@ public class Node {
         this.name = name;
         this.description = description;
         this.functions = functions;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setActive(boolean isActive) {
+        for(NodeFunction nodeFunction : functions) {
+            nodeFunction.isActive = isActive;
+        }
+    }
+
+    public NodeFunction[] getNodeFunctions(){
+        return functions;
+    }
+    public NodeFunction getNodeFunction(int index) {
+        return functions[index];
+    }
+
+    public void remove() {
+        for(NodeFunction function : functions) {
+            function.remove();
+        }
+        functions = null;
     }
 
     public static Node.Builder builder(String name, String description) {

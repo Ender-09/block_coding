@@ -1,9 +1,10 @@
 package com.ender09.block_coding;
 
-import com.ender09.block_coding.foundation.registry.ModBlockEntityTypes;
-import com.ender09.block_coding.foundation.registry.ModBlocks;
-import com.ender09.block_coding.foundation.registry.ModCreativeTabs;
-import com.ender09.block_coding.foundation.registry.ModItems;
+import com.ender09.block_coding.foundation.visual_scripting.nodes.NodeGeneratorHandler;
+import com.ender09.block_coding.registry.ModBlockEntityTypes;
+import com.ender09.block_coding.registry.ModBlocks;
+import com.ender09.block_coding.registry.ModCreativeTabs;
+import com.ender09.block_coding.registry.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -45,6 +46,7 @@ public class BlockCoding
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+        //NodeGeneratorHandler.scanAndRegisterDeviceNodeGenerators();
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)

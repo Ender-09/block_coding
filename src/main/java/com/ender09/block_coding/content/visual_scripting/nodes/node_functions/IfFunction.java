@@ -21,7 +21,7 @@ public class IfFunction extends NodeFunction {
     }
 
     @Override
-    public void trigger() {
+    public void onTrigger() {
         InfoInputParameter<Boolean> condition = (InfoInputParameter<Boolean>) inputs[1];
         EventFlowOutputParameter output = (Boolean) condition.getValue()? (EventFlowOutputParameter) outputs[0] : (EventFlowOutputParameter) outputs[1];
         output.trigger();

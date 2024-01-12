@@ -1,12 +1,12 @@
 package com.ender09.block_coding.content.computer;
 
 import com.ender09.block_coding.BlockCoding;
-import com.ender09.block_coding.foundation.visual_scripting.NodeWidget;
-import net.minecraft.client.gui.GuiGraphics;
+import com.ender09.block_coding.foundation.visual_scripting.NodeCanvasScreen;
+import com.ender09.block_coding.foundation.visual_scripting.NodeGraph;
+import com.ender09.block_coding.foundation.visual_scripting.widgets.NodeWidget;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
@@ -16,13 +16,10 @@ public class ComputerScreen extends Screen {
     private static final String COMPONENT_KEY = "gui." + BlockCoding.MOD_ID;
     private static final Component TITLE = Component.translatable(COMPONENT_KEY + ".computer_screen.title");
 
-    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(BlockCoding.MOD_ID, "textures/gui/visual_scripting/background.png");
-
-    private BlockPos position;
+    private final BlockPos position;
     private ComputerBlockEntity blockEntity;
+    private NodeGraph nodeGraph;
 
-    private List<NodeWidget> nodeWidgets;
- 
     public ComputerScreen(BlockPos pos) {
         super(TITLE);
         this.position = pos;
@@ -33,6 +30,7 @@ public class ComputerScreen extends Screen {
         super.init();
 
         if(!assignBlockEntity()) return;
+        nodeGraph = blockEntity.nodeGraph;
         createWidgets();
     }
     Boolean assignBlockEntity() {
@@ -49,15 +47,18 @@ public class ComputerScreen extends Screen {
             return false;
         }
     }
+
     void createWidgets() {
+        NodeCanvasScreen canvas = blockEntity.getNodeGraph().getNodeCanvas();
+        List<NodeWidget> nodeWidgets = canvas.getNodeWidgets();
 
-    }
+        addRenderableOnly(canvas);
+        for(NodeWidget nodeWidget : nodeWidgets) {
+            addRenderableWidget(nodeWidget);
+            nodeWidget.renderWidgetComponents(this.renderables);
+        }
 
-    @Override
-    public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
-        pGuiGraphics.setColor(1,1,1,0.7F);
-        pGuiGraphics.blit(BACKGROUND_TEXTURE, 0, 0, 0, 0.0F, 0.0F, this.width, this.height, 8, 8);
-        super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
+        addWidget(canvas);
     }
 
     @Override

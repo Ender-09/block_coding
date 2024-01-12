@@ -1,6 +1,7 @@
-package com.ender09.block_coding.foundation.registry;
+package com.ender09.block_coding.registry;
 
 import com.ender09.block_coding.BlockCoding;
+import com.ender09.block_coding.content.network_cable.NetworkCableBlock;
 import com.ender09.block_coding.content.computer.ComputerBlock;
 import com.ender09.block_coding.content.network_transceiver.NetworkTransceiverBlock;
 import net.minecraft.world.item.BlockItem;
@@ -20,9 +21,11 @@ public class ModBlocks {
 
     //List of registered Blocks:
     public static final RegistryObject<Block> COMPUTER = registerBlock("computer",
-            () -> new ComputerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new ComputerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> NETWORK_TRANSCEIVER = registerBlock("network_transceiver",
-            () -> new NetworkTransceiverBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new NetworkTransceiverBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> NETWORK_CABLE = registerBlock("network_cable",
+            () -> new NetworkCableBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
 
     //Helper Functions
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

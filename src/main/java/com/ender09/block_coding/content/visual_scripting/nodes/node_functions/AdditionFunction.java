@@ -20,7 +20,7 @@ public class AdditionFunction<T extends Number> extends NodeFunction {
     }
 
     @Override
-    public void trigger() {
+    public void onTrigger() {
         InfoInputParameter<T> valueA = (InfoInputParameter<T>) inputs[0];
         InfoInputParameter<T> valueB = (InfoInputParameter<T>) inputs[1];
         InfoOutputParameter<T> result = (InfoOutputParameter<T>) outputs[0];

@@ -8,13 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BlockCodingNodeGenerators {
-    public static final DeferredRegister<NodeGenerator> NODE_GENERATORS = DeferredRegister.create(BlockCoding.NODE_GENERATOR_REGISTRY_KEY, BlockCoding.MOD_ID);
-
     //List of Node generators
-    public static final RegistryObject<NodeGenerator> CONDITION_NODE = NODE_GENERATORS.register("condition",
+    public static final RegistryObject<NodeGenerator> CONDITION_NODE = BlockCoding.NODE_GENERATOR.register("condition",
             ConditionNodeGenerator::new);
-
-    public static void register(IEventBus eventBus) {
-        eventBus.register(NODE_GENERATORS);
-    }
 }

@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class BlockCodingDeviceNodeGenerators {
-    public static final DeferredRegister<DeviceNodeGenerator> DEVICE_NODE_GENERATORS = DeferredRegister.create(BlockCoding.DEVICE_NODE_GENERATOR_REGISTRY_KEY, BlockCoding.MOD_ID);
     public static Map<Class<? extends BlockEntity>, String> blockEntityKeyMap = new HashMap<>();
 
     //List of Device Nodes
@@ -22,12 +21,8 @@ public class BlockCodingDeviceNodeGenerators {
 
     //Helper Functions
     public static <T extends DeviceNodeGenerator> RegistryObject<T> registerDeviceNode(String nodeId, Class<? extends BlockEntity> blockEntityClass, Supplier<T> deviceNodeGenerator) {
-        RegistryObject<T> registryObject = DEVICE_NODE_GENERATORS.register(nodeId, deviceNodeGenerator);
+        RegistryObject<T> registryObject = BlockCoding.DEVICE_NODE_GENERATOR.register(nodeId, deviceNodeGenerator);
         blockEntityKeyMap.put(blockEntityClass, nodeId);
         return registryObject;
-    }
-
-    public static void register(IEventBus eventBus) {
-        eventBus.register(DEVICE_NODE_GENERATORS);
     }
 }

@@ -1,8 +1,9 @@
+/*
 package com.ender09.block_coding.compat.vanilla.sculk_sensor.visual_scripting;
 
 import com.ender09.block_coding.foundation.visual_scripting.nodes.DeviceNodeGenerator;
 import com.ender09.block_coding.foundation.visual_scripting.nodes.Node;
-import com.ender09.block_coding.util.EventSource;
+import com.ender09.block_coding.util.events.EventSource;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.SculkSensorBlockEntity;
 
@@ -33,3 +34,4 @@ public class SculkSensorNode extends DeviceNodeGenerator {
                 .build();
     }
 }
+*/

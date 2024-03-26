@@ -2,7 +2,7 @@ package com.ender09.block_coding.mixins;
 
 import com.ender09.block_coding.compat.vanilla.sculk_sensor.visual_scripting.SculkSensorEventAccessor;
 import com.ender09.block_coding.foundation.network.INetworkDeviceBE;
-import com.ender09.block_coding.util.EventSource;
+import com.ender09.block_coding.util.events.EventSource;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -23,7 +23,7 @@ public abstract class SculkSensorBlockEntityMixins extends BlockEntity implement
     }
 
     @Unique
-    protected EventSource<String> blockCoding$OnReceiveVibrationEvent = new EventSource<String>();
+    protected EventSource<String> blockCoding$OnReceiveVibrationEvent = new EventSource<String>("SculkSensorOnReceiveVibration");
     @Unique
     public EventSource<String> getOnReceiveVibrationEvent() {
         return blockCoding$OnReceiveVibrationEvent;

@@ -22,7 +22,7 @@ public class NetworkTransceiverBlockEntity extends BlockEntity {
     public void setNetwork(Network network) {
         //this.network = network;
         this.network = Network.NETWORKS.isEmpty() ? new Network(this.level) : Network.NETWORKS.get(0);    //TEMP
-        Network.NETWORKS.add(this.network);  //TEMP
+        Network.NETWORKS.put((double) 0, this.network);  //TEMP
         addDeviceToNetwork();
     }
     public Network getNetwork() {
@@ -45,5 +45,6 @@ public class NetworkTransceiverBlockEntity extends BlockEntity {
         if(this.network == null) return;
         if(deviceOldBlockEntity == null) return;
         network.removeDevice(deviceOldBlockEntity);
+        deviceOldBlockEntity = null;
     }
 }

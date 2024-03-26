@@ -1,19 +1,30 @@
 package com.ender09.block_coding.foundation.visual_scripting.nodes;
 
-import com.ender09.block_coding.foundation.visual_scripting.NodeFunction;
+import com.ender09.block_coding.foundation.visual_scripting.nodes.node_parameters.NodeParameter;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Node {
+    protected String nodeUUID;
+    protected String nodeId;
     String name;
     String description;
     NodeFunction[] functions;
+    protected Map<String, NodeParameter> inputParameters = new HashMap<>();
+    protected Map<String, NodeParameter> outputParameters = new HashMap<>();
 
-    protected Node(String name, String description, NodeFunction[] functions) {
+    public Node(String uuid, String nodeId, String name, String description) {
+        this.nodeUUID = uuid;
+        this.nodeId = nodeId;
         this.name = name;
         this.description = description;
-        this.functions = functions;
+    }
+
+    public String getUUID() {
+        return nodeUUID;
+    }
+    public String getId() {
+        return nodeId;
     }
 
     public void setName(String name) {
@@ -33,11 +44,43 @@ public class Node {
         }
     }
 
+    protected void setNodeFunctions(NodeFunction[] nodeFunctions) {
+        this.functions = nodeFunctions;
+    }
     public NodeFunction[] getNodeFunctions(){
         return functions;
     }
     public NodeFunction getNodeFunction(int index) {
         return functions[index];
+    }
+
+    public void addInput(NodeParameter input) {
+        if(inputParameters.containsKey(input.getId())) return;
+        inputParameters.put(input.getId(), input);
+    }
+    public NodeParameter getInput(String id) {
+        return inputParameters.get(id);
+    }
+    public NodeParameter[] getInputs() {
+        return inputParameters.values().toArray(NodeParameter[]::new);
+    }
+
+    public void addOutput(NodeParameter output) {
+        if(outputParameters.containsKey(output.getId())) return;
+        outputParameters.put(output.getId(), output);
+    }
+    public NodeParameter getOutput(String id) {
+        return outputParameters.get(id);
+    }
+    public NodeParameter[] getOutputs() {
+        return outputParameters.values().toArray(NodeParameter[]::new);
+    }
+
+
+    public void trigger() {
+        for(NodeFunction function : functions) {
+            function.trigger();
+        }
     }
 
     public void remove() {
@@ -47,17 +90,19 @@ public class Node {
         functions = null;
     }
 
-    public static Node.Builder builder(String name, String description) {
-        return new Node.Builder(name, description);
+    public static Node.Builder builder(String uuid, String nodeId, String name, String description) {
+        return new Node.Builder(uuid, nodeId, name, description);
     }
     public static class Builder {
-        String name;
-        String description;
+        Node node;
         List<NodeFunction> functions = new ArrayList<>();
 
-        public Builder(String name, String description) {
-            this.name = name;
-            this.description = description;
+        public Builder(String uuid, String nodeId, String name, String description) {
+            node = new Node(uuid, nodeId, name, description);
+        }
+
+        public Node getNode() {
+            return node;
         }
 
         public Node.Builder addFunction(NodeFunction function) {
@@ -66,7 +111,8 @@ public class Node {
         }
 
         public Node build() {
-            return new Node(name, description, functions.toArray(NodeFunction[]::new));
+            node.setNodeFunctions(functions.toArray(NodeFunction[]::new));
+            return node;
         }
     }
 }

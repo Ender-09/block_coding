@@ -7,11 +7,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Network {
-    public static List<Network> NETWORKS = new ArrayList<>();
+    public static Map<Double, Network> NETWORKS = new HashMap<>();
+    public static Network getNetwork(double id) {
+        return NETWORKS.get(id);
+    }
 
     public double networkId;
     Level level;
@@ -25,8 +27,21 @@ public class Network {
 
     public Network(Level level) {
         this.level = level;
-        NETWORKS.add(this);
+        this.networkId = 0;
+        NETWORKS.put(networkId, this);
     }
+
+    public double getId() {
+        return networkId;
+    }
+
+    public List<BlockPos> getDevices() {
+        return devices;
+    }
+    public List<BlockPos> getComputers() {
+        return computers;
+    }
+
     public void delete() {
         NETWORKS.remove(this);
     }
@@ -54,7 +69,7 @@ public class Network {
         if(deviceStillConnected(devicePos)) return;
         if(!devices.contains(devicePos)) return;
         devices.remove(devicePos);
-        removeDeviceToComputers(device);
+        removeDeviceFromComputers(device);
 
 
         if(device instanceof ComputerBlockEntity computerBlockEntity) {
@@ -62,8 +77,9 @@ public class Network {
             computerBlockEntity.removeNetwork();
         }
     }
-    void removeDeviceToComputers(BlockEntity device) {
+    void removeDeviceFromComputers(BlockEntity device) {
         for(BlockPos computerPos : computers) {
+            if(!this.level.getBlockState(computerPos).hasBlockEntity()) continue;
             ComputerBlockEntity computerBlockEntity = (ComputerBlockEntity) this.level.getBlockEntity(computerPos);
             computerBlockEntity.removeDevice(device);
         }

@@ -1,6 +1,6 @@
 package com.ender09.block_coding.compat.vanilla.sculk_sensor.visual_scripting;
 
-import com.ender09.block_coding.util.EventSource;
+import com.ender09.block_coding.util.events.EventSource;
 
 public interface SculkSensorEventAccessor {
     EventSource<String> getOnReceiveVibrationEvent();

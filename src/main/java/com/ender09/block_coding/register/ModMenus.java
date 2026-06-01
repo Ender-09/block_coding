@@ -15,7 +15,7 @@ public class ModMenus
             DeferredRegister.create(net.minecraft.core.registries.BuiltInRegistries.MENU, BlockCoding.MODID);
 
     //List of menus to register
-    public static final Supplier<MenuType<ComputerMenu>> COMPUTER_MENU = MENUS.register("my_menu", () -> new MenuType(ComputerMenu::new, FeatureFlags.DEFAULT_FLAGS));
+    public static final Supplier<MenuType<ComputerMenu>> COMPUTER_MENU = MENUS.register("computer_menu", () -> new MenuType<>(ComputerMenu::new, FeatureFlags.DEFAULT_FLAGS));
 
 
     public static void register(IEventBus eventBus)
